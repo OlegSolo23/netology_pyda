@@ -1,0 +1,32 @@
+#Задача 1
+n = int(input())
+for i in range(1, n+1):
+    if i % 3 == 0 and i % 5 == 0:
+        print('FizzBuzz', '', end='')
+    elif i % 3 == 0:
+        print('Fizz', '', end='')
+    elif i % 5 == 0:
+        print('Buzz', '', end='')
+    else:
+        print(i, '', end='')
+		
+		
+#Задача 2
+a = input()
+l = len(a)
+if l % 2 == 1:
+    print(a[(l // 2)])
+else:
+    print(a[(l // 2)-1]+a[(l // 2)])
+
+
+#Задача 3
+a = input()
+cnt = 8
+for i in range (4, 1000):
+    if a[0:i] == a[i:cnt]:
+        print(len(a[0:i]))
+        break
+    else:
+        cnt += 2
+        continue       	
