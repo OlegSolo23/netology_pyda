@@ -1,0 +1,70 @@
+#Задача 1
+def cnt (data):
+    sum_=0
+    l = len(data)
+    for i in range(0,l):
+        sum_ += data[i][i]
+    return sum_   
+	
+#Задача 2
+def fibo (n):
+    fibo = 0
+    sum_fibo = 0
+    x = [0, 1]
+    for i in range(0, n-2):
+        l = len(x)
+        for j in range (l-2, l):
+            fibo += x[j]
+        x.append(fibo)
+        fibo = 0
+    sum_fibo = sum(x)  
+    return sum_fibo
+
+#Задача 4
+c = 0
+comand = input('Введите команду:')
+if comand == 'p':
+    l = len(documents)
+    doc_number = input('Введите номер документа:')
+    for i in documents:
+        if doc_number == i['number']:
+            print(i['name'])
+            break
+        else:
+            c += 1
+            continue  
+    if c == l:
+        print('Такого документа нет')
+elif comand == 's':
+    x = 0
+    l = len(directories)
+    doc_number = input('Введите номер документа:')
+    for k,v in directories.items():
+        for i in v:
+            if i == doc_number:
+                print('Номер стелажа:',k)
+                x = 1 #Попробовать через Х, а не С
+                break
+            else:
+                continue
+        if x == 1:
+            break
+        else:
+            c += 1
+            continue
+    if c == l:
+        print('Такого документа нет') 
+        
+        
+#Задача 5
+elif comand == 'l':
+    for i in documents:
+        a = "\""+str(i['number'])+"\""
+        b = "\""+str(i['name'])+"\""
+        print(i['type'], a, b)
+elif comand == 'as':
+    sh = input('Введите номер полки:')
+    if sh not in directories.keys():
+        directories[sh] = []    
+    else:
+        print('Такая полка существует')        
